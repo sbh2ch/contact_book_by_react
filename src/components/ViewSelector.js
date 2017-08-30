@@ -67,7 +67,7 @@ Item.propTypes = {
     onSelect: PropTypes.func
 };
 
-const ViewSelector = ({selected, onSelect}) => (
+const ViewSelector = ({selected, onSelect}) => ( // selected = 'favorite' , onSelect (name) => setState({ view : name })
     <Wrapper>
         <Item
             selected={selected}
