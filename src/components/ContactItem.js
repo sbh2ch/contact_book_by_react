@@ -93,17 +93,26 @@ const CircleButton = styled.div`
     }
     
     ${ props => props.favorite && css`
+        ${props => props.active && css`
+            border: 1px solid ${oc.yellow[6]};
+            color: ${oc.yellow[6]};
+            
+            &:hover{
+                color: ${oc.yellow[5]};
+                border: 1px solid ${oc.yellow[5]};
+            }
+        `}
+
         &:active {
             border: 1px solid ${oc.yellow[8]};
             color: ${oc.yellow[8]};
         }
-        
-        &:hover {
-            border: 1px solid ${oc.yellow[4]};
-            color: ${oc.yellow[4]};
-        }
     `}
 `;
+
+CircleButton.propTypes = {
+    active: PropTypes.bool
+};
 
 export default class ContactItem extends Component {
     static propTypes = {
@@ -116,10 +125,10 @@ export default class ContactItem extends Component {
         }),
         onToggleFavorite: PropTypes.func,
         onOpenModify: PropTypes.func
-    }
+    };
 
     render() {
-        const {contact: {name, phone, favorite, id, color}, onOpenModify} = this.props;
+        const {contact: {name, phone, favorite, id, color}, onOpenModify, onToggleFavorite} = this.props;
         return (
             <Wrapper>
                 <Thumbmail color={color}/>
@@ -128,10 +137,14 @@ export default class ContactItem extends Component {
                     <Phone>{phone}</Phone>
                 </Info>
                 <div className="actions">
-                    <CircleButton favorite>
+                    <CircleButton
+                        favorite
+                        active={favorite}
+                        onClick={() => onToggleFavorite(id)}
+                    >
                         <StarIcon/>
                     </CircleButton>
-                    <CircleButton onClick={()=> onOpenModify(id)}>
+                    <CircleButton onClick={() => onOpenModify(id)}>
                         <EditIcon/>
                     </CircleButton>
                 </div>

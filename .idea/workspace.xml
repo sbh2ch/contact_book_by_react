@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="041d0c6a-cd20-4736-bddf-3a06e2113368" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ContactItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ContactList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/FavoriteItem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/FavoriteList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ContactModal.js" afterPath="$PROJECT_DIR$/src/components/ContactModal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ContactItem.js" afterPath="$PROJECT_DIR$/src/components/ContactItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ContactList.js" afterPath="$PROJECT_DIR$/src/components/ContactList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/style-utils.js" afterPath="$PROJECT_DIR$/src/lib/style-utils.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,10 +24,34 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="242" column="151" lean-forward="false" selection-start-line="242" selection-start-column="151" selection-end-line="242" selection-end-column="151" />
+            <state relative-caret-position="288">
+              <caret line="237" column="53" lean-forward="false" selection-start-line="237" selection-start-column="53" selection-end-line="237" selection-end-column="53" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavoriteList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/FavoriteList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+              <folding>
+                <element signature="e#52#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavoriteItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/FavoriteItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+              <folding>
+                <element signature="e#52#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,8 +60,8 @@
       <file leaf-file-name="ContactItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ContactItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="107" column="7" lean-forward="false" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+            <state relative-caret-position="1965">
+              <caret line="133" column="40" lean-forward="true" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="40" />
               <folding>
                 <element signature="e#52#91#0" expanded="true" />
               </folding>
@@ -46,11 +72,9 @@
       <file leaf-file-name="ContactList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ContactList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="21" column="63" lean-forward="false" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-              <folding>
-                <element signature="e#52#91#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,8 +82,8 @@
       <file leaf-file-name="style-utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/style-utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="582">
+              <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -131,14 +155,16 @@
         <option value="$PROJECT_DIR$/src/components/ViewSelector.js" />
         <option value="$PROJECT_DIR$/src/components/FloatingButton.js" />
         <option value="$PROJECT_DIR$/src/components/Dimmed.js" />
-        <option value="$PROJECT_DIR$/src/lib/style-utils.js" />
         <option value="$PROJECT_DIR$/src/components/Thumbnail.js" />
         <option value="$PROJECT_DIR$/src/components/Input.js" />
         <option value="$PROJECT_DIR$/src/components/Modal.js" />
         <option value="$PROJECT_DIR$/src/components/ContactItems.js" />
-        <option value="$PROJECT_DIR$/src/components/ContactItem.js" />
         <option value="$PROJECT_DIR$/src/components/ContactModal.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactItem.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/FavoriteList.js" />
+        <option value="$PROJECT_DIR$/src/components/FavoriteItem.js" />
+        <option value="$PROJECT_DIR$/src/lib/style-utils.js" />
         <option value="$PROJECT_DIR$/src/components/ContactList.js" />
       </list>
     </option>
@@ -745,12 +771,12 @@
       <workItem from="1504077316444" duration="38000" />
       <workItem from="1504078269624" duration="9000" />
       <workItem from="1504079649711" duration="4090000" />
-      <workItem from="1504143636577" duration="10311000" />
+      <workItem from="1504143636577" duration="12106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17668000" />
+    <option name="totallyTimeSpent" value="19463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-20" y="23" width="851" height="873" extended-state="0" />
@@ -954,14 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/style-utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1032,8 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="107" column="7" lean-forward="false" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+        <state relative-caret-position="1965">
+          <caret line="133" column="40" lean-forward="true" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="40" />
           <folding>
             <element signature="e#52#91#0" expanded="true" />
           </folding>
@@ -1042,21 +1060,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="242" column="151" lean-forward="false" selection-start-line="242" selection-start-column="151" selection-end-line="242" selection-end-column="151" />
+        <state relative-caret-position="288">
+          <caret line="237" column="53" lean-forward="false" selection-start-line="237" selection-start-column="53" selection-end-line="237" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FavoriteList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="e#52#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FavoriteItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+          <folding>
+            <element signature="e#52#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/style-utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="21" column="63" lean-forward="false" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-          <folding>
-            <element signature="e#52#91#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>

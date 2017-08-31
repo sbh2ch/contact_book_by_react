@@ -6,6 +6,7 @@ import FloatingButton from './components/FloatingButton';
 import ContactModal from './components/ContactModal';
 import Dimmed from './components/Dimmed';
 import ContactList from './components/ContactList';
+import FavoriteList from './components/FavoriteList';
 import oc from 'open-color';
 import shortId from 'shortid';
 import Input from './components/Input';
@@ -34,7 +35,7 @@ function generateRandomColor() {
 
 class App extends Component {
     state = {
-        view: 'list',
+        view: 'favorite',
         modal: {
             visible: false,
             mode: null
@@ -233,7 +234,9 @@ class App extends Component {
                 <ViewSelector
                     onSelect={handleSelectView} selected={view}
                 />
-                <Container visible={view === 'favorite'}>favorite</Container>
+                <Container visible={view === 'favorite'}>
+                    <FavoriteList contacts={contacts}/>
+                </Container>
                 <Container visible={view === 'list'}>
                     <Input
                         onChange={handleSearchChange}
