@@ -4,7 +4,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
-import {media} from '../lib/style-utils';
+import {media, transitions} from '../lib/style-utils';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
@@ -19,6 +20,16 @@ const Wrapper = styled.div`
     ${media.mobile`
         width: calc(100% - 2rem);
     `}
+    
+    .modal-enter {
+        animation: ${transitions.slideDown} .5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    
+    .modal-leave {
+        animation: ${transitions.slideUp} .5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 `;
 
 Wrapper.propTypes = {
@@ -70,9 +81,15 @@ class Modal extends Component {
         return (
             <div>
                 <Wrapper width={width}>
-                    {
-                        visible && (<ModalBox>{children}</ModalBox>)
-                    }
+                    <CSSTransitionGroup
+                        transitionName="modal"
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={500}
+                    >
+                        {
+                            visible && (<ModalBox>{children}</ModalBox>)
+                        }
+                    </CSSTransitionGroup>
                 </Wrapper>
             </div>
         )
