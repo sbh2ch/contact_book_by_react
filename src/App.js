@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Container from './components/Container';
 import ViewSelector from './components/ViewSelector';
 import FloatingButton from './components/FloatingButton';
+import ContactModal from './components/ContactModal';
+import Dimmed from './components/Dimmed';
 import oc from 'open-color';
 
 function generateRandomColor() {
@@ -84,8 +86,8 @@ class App extends Component {
     };
 
     render() {
-        const {view} = this.state;
-        const {handleSelectView, handleFloatingButtonClick} = this;
+        const {view, modal} = this.state;
+        const {handleSelectView, handleFloatingButtonClick, modalHandler} = this;
 
         return (
             <div>
@@ -95,6 +97,8 @@ class App extends Component {
                 />
                 <Container visible={view === 'favorite'}>favorite</Container>
                 <Container visible={view === 'list'}>list</Container>
+                <ContactModal {...modal} onHide={modalHandler.hide}/>
+                <Dimmed visible={modal.visible}/>
                 <FloatingButton onClick={handleFloatingButtonClick}/>
             </div>
         );
