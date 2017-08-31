@@ -80,6 +80,27 @@ class App extends Component {
         search: ''
     };
 
+    constructor(props) {
+        super(props);
+
+        const contactList = JSON.parse(localStorage.getItem('contactList'));
+        if (contactList) {
+            this.state = {
+                view: 'favorite',
+                modal: {
+                    visible: false,
+                    mode: null
+                },
+                contacts: contactList,
+                search:''
+            };
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        localStorage.setItem('contactList', JSON.stringify(this.state.contacts));
+    }
+
     handleSelectView = (view) => this.setState({view});
 
     handleSearchChange = (e) => {
@@ -243,7 +264,8 @@ class App extends Component {
                         value={search}
                         placeholder="Search"
                     />
-                    <ContactList contacts={contacts} onOpenModify={itemHandler.openModify} search={search} onToggleFavorite={itemHandler.toggleFavorite}/>
+                    <ContactList contacts={contacts} onOpenModify={itemHandler.openModify} search={search}
+                                 onToggleFavorite={itemHandler.toggleFavorite}/>
                 </Container>
                 <ContactModal {...modal}
                               onHide={modalHandler.hide}
