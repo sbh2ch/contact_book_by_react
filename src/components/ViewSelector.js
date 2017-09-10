@@ -1,7 +1,7 @@
 /**
  * Created by sonbyeonghwa on 2017. 8. 30..
  */
-import React from 'react';
+import React, {PureComponent} from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 import StarIcon from 'react-icons/lib/md/star';
@@ -67,21 +67,26 @@ Item.propTypes = {
     onSelect: PropTypes.func
 };
 
-const ViewSelector = ({selected, onSelect}) => ( // selected = 'favorite' , onSelect (name) => setState({ view : name })
-    <Wrapper>
-        <Item
-            selected={selected}
-            name="favorite"
-            onSelect={onSelect}
-        ><StarIcon/></Item>
-        <Item
-            selected={selected}
-            name="list"
-            onSelect={onSelect}
-        ><PeopleIcon/></Item>
-        <Bar right={selected === 'list'}/>
-    </Wrapper>
-);
+class ViewSelector extends PureComponent {
+    render() {
+        const {selected, onSelect} = this.props;
+        return (
+            <Wrapper>
+                <Item
+                    selected={selected}
+                    name="favorite"
+                    onSelect={onSelect}
+                ><StarIcon/></Item>
+                <Item
+                    selected={selected}
+                    name="list"
+                    onSelect={onSelect}
+                ><PeopleIcon/></Item>
+                <Bar right={selected === 'list'}/>
+            </Wrapper>
+        );
+    };
+}
 
 ViewSelector.propTypes = {
     selected: PropTypes.string,

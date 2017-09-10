@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import oc from 'open-color';
 import FavoriteItem from './FavoriteItem';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
@@ -15,8 +15,8 @@ const Wrapper = styled.div`
 
 const FavoriteList = ({contacts}) => {
     const favoriteList = contacts
-        .filter(contact => contact.favorite)
-        .map(contact => (<FavoriteItem key={contact.id} contact={contact}/>));
+        .filter(contact => contact.get('favorite'))
+        .map(contact => (<FavoriteItem key={contact.get('id')} contact={contact}/>));
 
     return (
         <Wrapper>
@@ -26,7 +26,15 @@ const FavoriteList = ({contacts}) => {
 };
 
 FavoriteItem.propTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.object)
+    contacts: ImmutablePropTypes.listOf(
+        ImmutablePropTypes.mapContains({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            phone: PropTypes.string,
+            color: PropTypes.string,
+            favorite: PropTypes.bool
+        })
+    )
 };
 
 export default FavoriteList;

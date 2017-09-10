@@ -115,20 +115,13 @@ CircleButton.propTypes = {
 };
 
 export default class ContactItem extends Component {
-    static propTypes = {
-        contact: PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-            phone: PropTypes.string,
-            color: PropTypes.string,
-            favorite: PropTypes.bool
-        }),
-        onToggleFavorite: PropTypes.func,
-        onOpenModify: PropTypes.func
-    };
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.contact !== nextProps.contact;
+    }
 
     render() {
-        const {contact: {name, phone, favorite, id, color}, onOpenModify, onToggleFavorite} = this.props;
+        const {contact, onOpenModify, onToggleFavorite} = this.props;
+        const {color, phone, favorite, name, id} = contact.toJS();
         return (
             <Wrapper>
                 <Thumbmail color={color}/>

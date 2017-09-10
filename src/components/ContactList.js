@@ -1,7 +1,7 @@
 /**
  * Created by sonbyeonghwa on 2017. 8. 31..
  */
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
@@ -22,27 +22,20 @@ const Wrapper = styled.div`
     }
 `;
 
-class ContactList extends Component {
-    static propTypes = {
-        contacts: PropTypes.arrayOf(PropTypes.object),
-        search: PropTypes.string,
-        onToggleFavorite: PropTypes.func,
-        onOpenModify: PropTypes.func
-    };
-
+class ContactList extends PureComponent {
     render() {
         const {contacts, onOpenModify, search, onToggleFavorite} = this.props;
         const contactList = contacts
-            .filter(c => c.name.indexOf(search) !== -1)
+            .filter(c => c.get('name').indexOf(search) !== -1)
             .sort((a, b) => {
-                if (a.name > b.name) return 1;
-                if (a.name < b.name) return -1;
+                if (a.get('name') > b.get('name')) return 1;
+                if (a.get('name') < b.get('name')) return -1;
                 return 0;
             })
             .map(
                 contact => (
                     <ContactItem
-                        key={contact.id}
+                        key={contact.get('id')}
                         contact={contact}
                         onOpenModify={onOpenModify}
                         onToggleFavorite={onToggleFavorite}
