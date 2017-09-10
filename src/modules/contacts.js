@@ -1,15 +1,17 @@
 import {createAction, handleActions} from 'redux-actions';
-import {List, Map} from 'immutable';
+import {List, Map, fromJS} from 'immutable';
 
 const CREATE = 'contact/CREATE';
 const MODIFY = 'contact/MODIFY';
 const REMOVE = 'contact/REMOVE';
 const TOGGLE_FAVORITE = 'contact/TOGGLE_FAVORITE';
+const LOAD_CONTACTS = 'contact/LOAD_CONTACTS';
 
 export const create = createAction(CREATE); // id, name, phone, color
 export const modify = createAction(MODIFY); // id, contact: {name, phone}
 export const remove = createAction(REMOVE); // id
 export const toggleFavorite = createAction(TOGGLE_FAVORITE); // id
+export const loadContacts = createAction(LOAD_CONTACTS);
 
 const initialState = List([
     Map({
@@ -61,5 +63,14 @@ export default handleActions({
         const index = state.findIndex(contact => contact.get('id') === action.payload);
 
         return state.update(index, contact => contact.set('favorite', !contact.get('favorite')));
+    },
+    [LOAD_CONTACTS]: (state) => {
+        const storageList = JSON.parse(localStorage.getItem('contactList'));
+        if (storageList) {
+            return fromJS(storageList);
+        }
+
+        return state;
+
     }
 }, initialState);
